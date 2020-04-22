@@ -10,7 +10,7 @@ module Cipher
     cipher_digest_key || ENV.fetch('CIPHER_DIGEST_KEY')
   end
 
-  def self.encrypt(clear_text, cipher_digest_key)
+  def self.encrypt(clear_text, cipher_digest_key = nil)
     cipher = OpenSSL::Cipher::AES256.new :CBC
     cipher.encrypt
 
